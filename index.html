@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Torneo di Baseball U15 · Tenerife · 24 nov – 1 dic 2026</title>
+  <meta name="description" content="Iscrivi un ragazzo al Torneo di Baseball categoria U15 a Tenerife, 24 novembre – 1 dicembre 2026. Raccolta adesioni online." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__overlay"></div>
+    <img src="assets/Logo-HP-Montegrappa.png" alt="Montegrappa Baseball" class="hero__logo"
+         onerror="this.style.display='none'" />
+    <div class="hero__content">
+      <span class="badge">⚾ Tenerife Winter League · Categorie U13 e U15</span>
+      <h1>Il Montegrappa Baseball<br>al torneo di Tenerife</h1>
+      <p class="hero__sub">Tenerife Winter League · Novembre – Dicembre 2026</p>
+      <p class="hero__desc">
+        Il <strong>Montegrappa Baseball</strong> partecipa alla Tenerife Winter League nelle
+        categorie <strong>Under 13</strong> e <strong>Under 15</strong>.
+        Manifesta l'interesse di un ragazzo e regalagli un'esperienza indimenticabile.
+      </p>
+      <a href="#iscrizione" class="btn btn--primary">Manifesta il tuo interesse</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="info">
+      <div class="info__grid">
+        <article class="card">
+          <div class="card__icon">📍</div>
+          <h3>Dove</h3>
+          <p>Tenerife, Isole Canarie (Spagna). Campi e strutture comunicati agli iscritti.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">📅</div>
+          <h3>Quando</h3>
+          <p>U13: dal 17 al 24 novembre 2026.<br>U15: dal 24 novembre al 1 dicembre 2026.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🧢</div>
+          <h3>Categorie</h3>
+          <p>Under 13 (U13) e Under 15 (U15). Vedi sotto il programma dettagliato di ciascuna categoria.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">🏆</div>
+          <h3>Formula</h3>
+          <p>Gironi all'italiana e fase finale ad eliminazione. Premiazione per tutti i partecipanti.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="schedule">
+      <div class="schedule__inner">
+        <h2>Programma del torneo</h2>
+        <div class="schedule__grid">
+          <article class="sched-card">
+            <h3><span class="sched-card__tag">U13</span> Under 13</h3>
+            <ul>
+              <li><span>Arrivo</span><strong>17 novembre 2026</strong></li>
+              <li><span>Partite</span><strong>18 · 19 · 20 novembre</strong></li>
+              <li><span>Giorno di riposo</span><strong>21 novembre</strong></li>
+              <li><span>Semifinali</span><strong>22 novembre</strong></li>
+              <li><span>Finali</span><strong>23 novembre</strong></li>
+              <li><span>Partenza</span><strong>24 novembre 2026</strong></li>
+            </ul>
+          </article>
+          <article class="sched-card">
+            <h3><span class="sched-card__tag">U15</span> Under 15</h3>
+            <ul>
+              <li><span>Arrivo</span><strong>24 novembre 2026</strong></li>
+              <li><span>Partite</span><strong>25 · 26 · 27 novembre</strong></li>
+              <li><span>Giorno di riposo</span><strong>28 novembre</strong></li>
+              <li><span>Semifinali</span><strong>29 novembre</strong></li>
+              <li><span>Finali</span><strong>30 novembre</strong></li>
+              <li><span>Partenza</span><strong>1 dicembre 2026</strong></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="iscrizione" class="signup">
+      <div class="signup__inner">
+        <h2>Modulo di adesione</h2>
+        <div class="notice">
+          <strong>ℹ️ Solo manifestazione di interesse.</strong>
+          Questo modulo serve esclusivamente a raccogliere l'interesse degli eventuali
+          partecipanti: <strong>non costituisce un'iscrizione vincolante</strong> né alcun obbligo.
+          Ti contatteremo per i dettagli e per l'eventuale conferma ufficiale.
+        </div>
+        <p class="signup__lead">
+          Compila il modulo per segnalare l'interesse a partecipare al torneo.
+          Ti contatteremo con tutti i dettagli logistici e organizzativi.
+        </p>
+
+        <form id="signupForm" novalidate>
+          <fieldset class="field field--inline">
+            <legend>Categoria *</legend>
+            <label class="radio"><input type="radio" name="category" value="U13" required /> Under 13 (U13)</label>
+            <label class="radio"><input type="radio" name="category" value="U15" required /> Under 15 (U15)</label>
+          </fieldset>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="firstName">Nome del ragazzo *</label>
+              <input type="text" id="firstName" name="firstName" required autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label for="lastName">Cognome del ragazzo *</label>
+              <input type="text" id="lastName" name="lastName" required autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="birthDate">Data di nascita *</label>
+              <input type="date" id="birthDate" name="birthDate" required min="2011-01-01" max="2014-12-31" />
+            </div>
+            <div class="field">
+              <label for="role">Ruolo in campo</label>
+              <input type="text" id="role" name="role" placeholder="es. Lanciatore, Esterno..." />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="club">Società / squadra</label>
+            <input type="text" id="club" name="club" value="Montegrappa Baseball" />
+          </div>
+
+          <div class="field">
+            <label for="parent">Genitore / tutore *</label>
+            <input type="text" id="parent" name="parent" required autocomplete="name" />
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="phone">Telefono *</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="country">Paese / Città</label>
+            <input type="text" id="country" name="country" placeholder="es. Italia, Milano" />
+          </div>
+
+          <fieldset class="field field--inline">
+            <legend>Necessità di alloggio?</legend>
+            <label class="radio"><input type="radio" name="lodging" value="Sì" /> Sì</label>
+            <label class="radio"><input type="radio" name="lodging" value="No" /> No</label>
+            <label class="radio"><input type="radio" name="lodging" value="Da definire" checked /> Da definire</label>
+          </fieldset>
+
+          <div class="field">
+            <label for="notes">Note (facoltativo)</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Esigenze alimentari, esperienza, domande..."></textarea>
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" id="privacy" name="privacy" required />
+            <span>In qualità di genitore/tutore acconsento al trattamento dei dati per l'organizzazione del torneo. *</span>
+          </label>
+
+          <button type="submit" class="btn btn--primary btn--full">Invia adesione</button>
+          <p class="form__note">I campi contrassegnati con * sono obbligatori.</p>
+        </form>
+
+        <div id="confirmation" class="confirmation" hidden>
+          <div class="confirmation__icon">✅</div>
+          <h3>Adesione registrata!</h3>
+          <p>Grazie! L'interesse per <strong id="confName"></strong> è stato registrato. Ricorda: è solo una manifestazione di interesse, non vincolante. Ti contatteremo presto via email.</p>
+          <button type="button" id="newSignup" class="btn btn--ghost">Iscrivi un altro ragazzo</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="admin">
+      <details>
+        <summary>Area organizzatori — adesioni raccolte (<span id="count">0</span>)</summary>
+        <div class="admin__body">
+          <p class="admin__hint">
+            Le adesioni sono salvate localmente in questo browser. Esportale in CSV per conservarle.
+          </p>
+          <div class="admin__actions">
+            <button type="button" id="exportCsv" class="btn btn--ghost">Esporta CSV</button>
+            <button type="button" id="clearAll" class="btn btn--danger">Cancella tutto</button>
+          </div>
+          <div class="table-wrap">
+            <table id="entriesTable">
+              <thead>
+                <tr>
+                  <th>Cat.</th><th>Ragazzo</th><th>Nato il</th><th>Società</th><th>Genitore/tutore</th>
+                  <th>Email</th><th>Telefono</th><th>Data iscrizione</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Montegrappa Baseball · Torneo U15 · Tenerife · 24 novembre – 1 dicembre 2026</p>
+    <p class="footer__small">Per informazioni: scrivi al referente dell'organizzazione.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
