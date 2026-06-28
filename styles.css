@@ -43,13 +43,20 @@ h1, h2, h3 { line-height: 1.2; }
   pointer-events: none;
 }
 .hero__content { position: relative; max-width: 760px; margin: 0 auto; }
+.hero__logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin: 0 auto 1.75rem;
+}
 .hero__logo {
   display: block;
-  width: min(360px, 80%);
+  width: min(280px, 70vw);
   height: auto;
-  margin: 0 auto 1.5rem;
   background: #fff;
-  padding: 0.9rem 1.2rem;
+  padding: 0.8rem 1rem;
   border-radius: var(--radius);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }

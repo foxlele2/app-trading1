@@ -1,1 +1,3 @@
-Inserire qui il file del logo con nome esatto: logo-montegrappa.png
+Inserire qui i file dei loghi con questi nomi esatti:
+- logo-montegrappa.png  (logo Montegrappa Baseball)
+- logo-torneo.png       (logo del torneo)
