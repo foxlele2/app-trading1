@@ -5,7 +5,7 @@
 
   var form = document.getElementById("signupForm");
   var confirmation = document.getElementById("confirmation");
-  var confTeam = document.getElementById("confTeam");
+  var confName = document.getElementById("confName");
   var newSignupBtn = document.getElementById("newSignup");
   var tableBody = document.querySelector("#entriesTable tbody");
   var countEl = document.getElementById("count");
@@ -30,6 +30,13 @@
       d.toLocaleTimeString("it-IT", { hour: "2-digit", minute: "2-digit" });
   }
 
+  function formatBirth(iso) {
+    if (!iso) return "";
+    var parts = iso.split("-");
+    if (parts.length !== 3) return iso;
+    return parts[2] + "/" + parts[1] + "/" + parts[0];
+  }
+
   function escapeHtml(str) {
     return String(str == null ? "" : str)
       .replace(/&/g, "&amp;")
@@ -43,13 +50,14 @@
     tableBody.innerHTML = "";
     entries.forEach(function (e) {
       var tr = document.createElement("tr");
+      var fullName = ((e.firstName || "") + " " + (e.lastName || "")).trim();
       tr.innerHTML =
-        "<td>" + escapeHtml(e.team) + "</td>" +
+        "<td>" + escapeHtml(fullName) + "</td>" +
+        "<td>" + escapeHtml(formatBirth(e.birthDate)) + "</td>" +
         "<td>" + escapeHtml(e.club) + "</td>" +
-        "<td>" + escapeHtml(e.contact) + "</td>" +
+        "<td>" + escapeHtml(e.parent) + "</td>" +
         "<td>" + escapeHtml(e.email) + "</td>" +
         "<td>" + escapeHtml(e.phone) + "</td>" +
-        "<td>" + escapeHtml(e.players) + "</td>" +
         "<td>" + escapeHtml(formatDate(e.createdAt)) + "</td>";
       tableBody.appendChild(tr);
     });
@@ -79,14 +87,15 @@
 
     var lodging = form.querySelector('input[name="lodging"]:checked');
     var entry = {
-      team: form.team.value.trim(),
-      club: form.club.value.trim(),
-      contact: form.contact.value.trim(),
+      firstName: form.firstName.value.trim(),
+      lastName: form.lastName.value.trim(),
+      birthDate: form.birthDate.value,
       role: form.role.value.trim(),
+      club: form.club.value.trim(),
+      parent: form.parent.value.trim(),
       email: form.email.value.trim(),
       phone: form.phone.value.trim(),
       country: form.country.value.trim(),
-      players: form.players.value.trim(),
       lodging: lodging ? lodging.value : "",
       notes: form.notes.value.trim(),
       createdAt: new Date().toISOString()
@@ -97,7 +106,7 @@
     saveEntries(entries);
     render();
 
-    confTeam.textContent = entry.team;
+    confName.textContent = (entry.firstName + " " + entry.lastName).trim();
     form.hidden = true;
     confirmation.hidden = false;
     confirmation.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -116,11 +125,11 @@
       alert("Nessuna adesione da esportare.");
       return;
     }
-    var headers = ["Squadra", "Club", "Referente", "Ruolo", "Email", "Telefono",
-      "Paese/Citta", "Giocatori", "Alloggio", "Note", "Data"];
+    var headers = ["Nome", "Cognome", "Data di nascita", "Ruolo", "Societa",
+      "Genitore/tutore", "Email", "Telefono", "Paese/Citta", "Alloggio", "Note", "Data iscrizione"];
     var rows = entries.map(function (e) {
-      return [e.team, e.club, e.contact, e.role, e.email, e.phone,
-        e.country, e.players, e.lodging, e.notes, formatDate(e.createdAt)];
+      return [e.firstName, e.lastName, formatBirth(e.birthDate), e.role, e.club,
+        e.parent, e.email, e.phone, e.country, e.lodging, e.notes, formatDate(e.createdAt)];
     });
 
     function csvCell(v) {
@@ -136,7 +145,7 @@
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
     a.href = url;
-    a.download = "adesioni-torneo-u15-tenerife.csv";
+    a.download = "iscrizioni-torneo-u15-tenerife.csv";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

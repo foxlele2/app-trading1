@@ -1,7 +1,8 @@
 # Torneo di Baseball U15 · Tenerife
 
 Pagina web per la raccolta delle adesioni al **Torneo Internazionale di Baseball
-categoria U15** che si terrà a **Tenerife a fine novembre**.
+categoria U15** che si terrà a **Tenerife dal 24 novembre al 1 dicembre 2026**.
+Il modulo serve a iscrivere un singolo ragazzo (non una squadra).
 
 ## Contenuto
 
@@ -12,7 +13,7 @@ categoria U15** che si terrà a **Tenerife a fine novembre**.
 ## Come usarla
 
 Apri `index.html` in un browser (oppure pubblicala con un hosting statico, es.
-GitHub Pages). Le squadre possono compilare il modulo con i propri dati.
+GitHub Pages). I genitori possono iscrivere un ragazzo compilando il modulo.
 
 ### Funzionalità
 

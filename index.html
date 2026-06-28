@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Torneo di Baseball U15 · Tenerife · 24 nov – 1 dic 2026</title>
-  <meta name="description" content="Iscrivi la tua squadra al Torneo di Baseball categoria U15 a Tenerife, fine novembre. Raccolta adesioni online." />
+  <meta name="description" content="Iscrivi un ragazzo al Torneo di Baseball categoria U15 a Tenerife, 24 novembre – 1 dicembre 2026. Raccolta adesioni online." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
 </head>
@@ -16,10 +16,10 @@
       <h1>Torneo Internazionale di Baseball</h1>
       <p class="hero__sub">Tenerife · 24 novembre – 1 dicembre 2026</p>
       <p class="hero__desc">
-        Tre giorni di sport, sole e grande baseball sull'isola di Tenerife.
-        Iscrivi la tua squadra Under 15 e vivi un'esperienza indimenticabile.
+        Sport, sole e grande baseball sull'isola di Tenerife.
+        Iscrivi un ragazzo Under 15 e regalagli un'esperienza indimenticabile.
       </p>
-      <a href="#iscrizione" class="btn btn--primary">Iscrivi la tua squadra</a>
+      <a href="#iscrizione" class="btn btn--primary">Iscrivi un ragazzo</a>
     </div>
   </header>
 
@@ -29,7 +29,7 @@
         <article class="card">
           <div class="card__icon">📍</div>
           <h3>Dove</h3>
-          <p>Tenerife, Isole Canarie (Spagna). Campi e strutture comunicati alle squadre iscritte.</p>
+          <p>Tenerife, Isole Canarie (Spagna). Campi e strutture comunicati agli iscritti.</p>
         </article>
         <article class="card">
           <div class="card__icon">📅</div>
@@ -39,12 +39,12 @@
         <article class="card">
           <div class="card__icon">🧢</div>
           <h3>Categoria</h3>
-          <p>Under 15 (U15). Squadre con giocatori nati nel 2011 e successivi.</p>
+          <p>Under 15 (U15). Ragazzi nati nel 2011 e successivi.</p>
         </article>
         <article class="card">
           <div class="card__icon">🏆</div>
           <h3>Formula</h3>
-          <p>Gironi all'italiana e fase finale ad eliminazione. Premiazione per tutte le squadre.</p>
+          <p>Gironi all'italiana e fase finale ad eliminazione. Premiazione per tutti i partecipanti.</p>
         </article>
       </div>
     </section>
@@ -53,30 +53,41 @@
       <div class="signup__inner">
         <h2>Modulo di adesione</h2>
         <p class="signup__lead">
-          Compila il modulo per manifestare l'interesse della tua squadra.
+          Compila il modulo per iscrivere un ragazzo al torneo.
           Ti contatteremo con tutti i dettagli logistici e organizzativi.
         </p>
 
         <form id="signupForm" novalidate>
-          <div class="field">
-            <label for="team">Nome della squadra *</label>
-            <input type="text" id="team" name="team" required autocomplete="organization" />
-          </div>
-
-          <div class="field">
-            <label for="club">Società / Club *</label>
-            <input type="text" id="club" name="club" required />
+          <div class="field-row">
+            <div class="field">
+              <label for="firstName">Nome del ragazzo *</label>
+              <input type="text" id="firstName" name="firstName" required autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label for="lastName">Cognome del ragazzo *</label>
+              <input type="text" id="lastName" name="lastName" required autocomplete="family-name" />
+            </div>
           </div>
 
           <div class="field-row">
             <div class="field">
-              <label for="contact">Referente *</label>
-              <input type="text" id="contact" name="contact" required autocomplete="name" />
+              <label for="birthDate">Data di nascita *</label>
+              <input type="date" id="birthDate" name="birthDate" required min="2011-01-01" max="2014-12-31" />
             </div>
             <div class="field">
-              <label for="role">Ruolo</label>
-              <input type="text" id="role" name="role" placeholder="es. Allenatore, Dirigente" />
+              <label for="role">Ruolo in campo</label>
+              <input type="text" id="role" name="role" placeholder="es. Lanciatore, Esterno..." />
             </div>
+          </div>
+
+          <div class="field">
+            <label for="club">Società / squadra di appartenenza</label>
+            <input type="text" id="club" name="club" placeholder="se tesserato" />
+          </div>
+
+          <div class="field">
+            <label for="parent">Genitore / tutore *</label>
+            <input type="text" id="parent" name="parent" required autocomplete="name" />
           </div>
 
           <div class="field-row">
@@ -90,15 +101,9 @@
             </div>
           </div>
 
-          <div class="field-row">
-            <div class="field">
-              <label for="country">Paese / Città</label>
-              <input type="text" id="country" name="country" placeholder="es. Italia, Milano" />
-            </div>
-            <div class="field">
-              <label for="players">Numero giocatori previsti *</label>
-              <input type="number" id="players" name="players" min="9" max="30" required />
-            </div>
+          <div class="field">
+            <label for="country">Paese / Città</label>
+            <input type="text" id="country" name="country" placeholder="es. Italia, Milano" />
           </div>
 
           <fieldset class="field field--inline">
@@ -110,12 +115,12 @@
 
           <div class="field">
             <label for="notes">Note (facoltativo)</label>
-            <textarea id="notes" name="notes" rows="4" placeholder="Disponibilità date, esigenze particolari, domande..."></textarea>
+            <textarea id="notes" name="notes" rows="4" placeholder="Esigenze alimentari, esperienza, domande..."></textarea>
           </div>
 
           <label class="checkbox">
             <input type="checkbox" id="privacy" name="privacy" required />
-            <span>Acconsento al trattamento dei dati per l'organizzazione del torneo. *</span>
+            <span>In qualità di genitore/tutore acconsento al trattamento dei dati per l'organizzazione del torneo. *</span>
           </label>
 
           <button type="submit" class="btn btn--primary btn--full">Invia adesione</button>
@@ -125,8 +130,8 @@
         <div id="confirmation" class="confirmation" hidden>
           <div class="confirmation__icon">✅</div>
           <h3>Adesione registrata!</h3>
-          <p>Grazie, <strong id="confTeam"></strong>. La tua richiesta è stata salvata. Ti contatteremo presto via email.</p>
-          <button type="button" id="newSignup" class="btn btn--ghost">Inserisci un'altra squadra</button>
+          <p>Grazie! L'iscrizione di <strong id="confName"></strong> è stata salvata. Ti contatteremo presto via email.</p>
+          <button type="button" id="newSignup" class="btn btn--ghost">Iscrivi un altro ragazzo</button>
         </div>
       </div>
     </section>
@@ -146,8 +151,8 @@
             <table id="entriesTable">
               <thead>
                 <tr>
-                  <th>Squadra</th><th>Club</th><th>Referente</th>
-                  <th>Email</th><th>Telefono</th><th>Giocatori</th><th>Data</th>
+                  <th>Ragazzo</th><th>Nato il</th><th>Società</th><th>Genitore/tutore</th>
+                  <th>Email</th><th>Telefono</th><th>Data iscrizione</th>
                 </tr>
               </thead>
               <tbody></tbody>
@@ -159,7 +164,7 @@
   </main>
 
   <footer class="footer">
-    <p>Torneo di Baseball U15 · Tenerife · Fine Novembre 2026</p>
+    <p>Torneo di Baseball U15 · Tenerife · 24 novembre – 1 dicembre 2026</p>
     <p class="footer__small">Per informazioni: scrivi al referente dell'organizzazione.</p>
   </footer>
 
