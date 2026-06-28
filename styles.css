@@ -122,6 +122,17 @@ h1, h2, h3 { line-height: 1.2; }
   border: 1px solid var(--line);
 }
 .signup h2 { color: var(--navy); margin-top: 0; font-size: 1.8rem; }
+.notice {
+  background: #fff7e6;
+  border: 1px solid #f0d28a;
+  border-left: 4px solid #e0a800;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  margin: 0 0 1.25rem;
+  color: #6b5300;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
 .signup__lead { color: var(--muted); margin-bottom: 1.75rem; }
 
 .field { margin-bottom: 1.15rem; }
