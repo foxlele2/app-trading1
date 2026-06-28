@@ -31,8 +31,9 @@ h1, h2, h3 { line-height: 1.2; }
   text-align: center;
   padding: 5rem 1.25rem 5.5rem;
   background:
-    radial-gradient(1200px 500px at 50% -10%, rgba(193, 18, 31, 0.45), transparent 60%),
-    linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 60%, #1d4373 100%);
+    radial-gradient(1200px 500px at 50% -10%, rgba(193, 18, 31, 0.35), transparent 60%),
+    linear-gradient(160deg, rgba(11, 37, 69, 0.90) 0%, rgba(19, 49, 92, 0.84) 60%, rgba(29, 67, 115, 0.88) 100%),
+    url("assets/webSlide-2024.jpg") center / cover no-repeat;
   overflow: hidden;
 }
 .hero__overlay {
@@ -118,6 +119,40 @@ h1, h2, h3 { line-height: 1.2; }
 .card__icon { font-size: 2rem; }
 .card h3 { margin: 0.5rem 0 0.4rem; color: var(--navy); }
 .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* SCHEDULE */
+.schedule { max-width: 1040px; margin: 4rem auto 0; padding: 0 1.25rem; }
+.schedule__inner h2 { color: var(--navy); text-align: center; font-size: 1.8rem; margin: 0 0 1.75rem; }
+.schedule__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+.sched-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 1.5rem 0.75rem;
+}
+.sched-card h3 { color: var(--navy); margin: 0 0 1rem; display: flex; align-items: center; gap: 0.6rem; }
+.sched-card__tag {
+  background: var(--red);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+}
+.sched-card ul { list-style: none; margin: 0; padding: 0; }
+.sched-card li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.sched-card li:last-child { border-bottom: none; }
+.sched-card li span { color: var(--muted); }
+.sched-card li strong { color: var(--ink); text-align: right; }
 
 /* SIGNUP */
 .signup { max-width: 720px; margin: 4rem auto; padding: 0 1.25rem; }

@@ -12,18 +12,15 @@
   <header class="hero">
     <div class="hero__overlay"></div>
     <div class="hero__content">
-      <div class="hero__logos">
-        <img src="assets/logo-montegrappa.png" alt="Montegrappa Baseball" class="hero__logo"
-             onerror="this.style.display='none'" />
-        <img src="assets/logo-torneo.png" alt="Logo del torneo" class="hero__logo"
-             onerror="this.style.display='none'" />
-      </div>
-      <span class="badge">⚾ Categoria U15</span>
-      <h1>Torneo Internazionale di Baseball</h1>
-      <p class="hero__sub">Tenerife · 24 novembre – 1 dicembre 2026</p>
+      <img src="assets/Logo-HP-Montegrappa.png" alt="Montegrappa Baseball" class="hero__logo"
+           onerror="this.style.display='none'" />
+      <span class="badge">⚾ Tenerife Winter League · Categorie U13 e U15</span>
+      <h1>Il Montegrappa Baseball<br>al torneo di Tenerife</h1>
+      <p class="hero__sub">Tenerife Winter League · Novembre – Dicembre 2026</p>
       <p class="hero__desc">
-        Il <strong>Montegrappa Baseball</strong> partecipa al torneo Under 15 di Tenerife.
-        Iscrivi un ragazzo e regalagli un'esperienza indimenticabile.
+        Il <strong>Montegrappa Baseball</strong> partecipa alla Tenerife Winter League nelle
+        categorie <strong>Under 13</strong> e <strong>Under 15</strong>.
+        Manifesta l'interesse di un ragazzo e regalagli un'esperienza indimenticabile.
       </p>
       <a href="#iscrizione" class="btn btn--primary">Manifesta il tuo interesse</a>
     </div>
@@ -40,18 +37,48 @@
         <article class="card">
           <div class="card__icon">📅</div>
           <h3>Quando</h3>
-          <p>U15: dal 24 novembre al 1 dicembre 2026. Calendario partite inviato dopo la chiusura delle iscrizioni.</p>
+          <p>U13: dal 17 al 24 novembre 2026.<br>U15: dal 24 novembre al 1 dicembre 2026.</p>
         </article>
         <article class="card">
           <div class="card__icon">🧢</div>
-          <h3>Categoria</h3>
-          <p>Under 15 (U15). Ragazzi nati nel 2011 e successivi.</p>
+          <h3>Categorie</h3>
+          <p>Under 13 (U13) e Under 15 (U15). Vedi sotto il programma dettagliato di ciascuna categoria.</p>
         </article>
         <article class="card">
           <div class="card__icon">🏆</div>
           <h3>Formula</h3>
           <p>Gironi all'italiana e fase finale ad eliminazione. Premiazione per tutti i partecipanti.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="schedule">
+      <div class="schedule__inner">
+        <h2>Programma del torneo</h2>
+        <div class="schedule__grid">
+          <article class="sched-card">
+            <h3><span class="sched-card__tag">U13</span> Under 13</h3>
+            <ul>
+              <li><span>Arrivo</span><strong>17 novembre 2026</strong></li>
+              <li><span>Partite</span><strong>18 · 19 · 20 novembre</strong></li>
+              <li><span>Giorno di riposo</span><strong>21 novembre</strong></li>
+              <li><span>Semifinali</span><strong>22 novembre</strong></li>
+              <li><span>Finali</span><strong>23 novembre</strong></li>
+              <li><span>Partenza</span><strong>24 novembre 2026</strong></li>
+            </ul>
+          </article>
+          <article class="sched-card">
+            <h3><span class="sched-card__tag">U15</span> Under 15</h3>
+            <ul>
+              <li><span>Arrivo</span><strong>24 novembre 2026</strong></li>
+              <li><span>Partite</span><strong>25 · 26 · 27 novembre</strong></li>
+              <li><span>Giorno di riposo</span><strong>28 novembre</strong></li>
+              <li><span>Semifinali</span><strong>29 novembre</strong></li>
+              <li><span>Finali</span><strong>30 novembre</strong></li>
+              <li><span>Partenza</span><strong>1 dicembre 2026</strong></li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -70,6 +97,12 @@
         </p>
 
         <form id="signupForm" novalidate>
+          <fieldset class="field field--inline">
+            <legend>Categoria *</legend>
+            <label class="radio"><input type="radio" name="category" value="U13" required /> Under 13 (U13)</label>
+            <label class="radio"><input type="radio" name="category" value="U15" required /> Under 15 (U15)</label>
+          </fieldset>
+
           <div class="field-row">
             <div class="field">
               <label for="firstName">Nome del ragazzo *</label>
@@ -163,7 +196,7 @@
             <table id="entriesTable">
               <thead>
                 <tr>
-                  <th>Ragazzo</th><th>Nato il</th><th>Società</th><th>Genitore/tutore</th>
+                  <th>Cat.</th><th>Ragazzo</th><th>Nato il</th><th>Società</th><th>Genitore/tutore</th>
                   <th>Email</th><th>Telefono</th><th>Data iscrizione</th>
                 </tr>
               </thead>

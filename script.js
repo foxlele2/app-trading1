@@ -52,6 +52,7 @@
       var tr = document.createElement("tr");
       var fullName = ((e.firstName || "") + " " + (e.lastName || "")).trim();
       tr.innerHTML =
+        "<td>" + escapeHtml(e.category) + "</td>" +
         "<td>" + escapeHtml(fullName) + "</td>" +
         "<td>" + escapeHtml(formatBirth(e.birthDate)) + "</td>" +
         "<td>" + escapeHtml(e.club) + "</td>" +
@@ -67,9 +68,16 @@
     var ok = true;
     var required = form.querySelectorAll("[required]");
     required.forEach(function (el) {
-      var valid = el.type === "checkbox" ? el.checked : String(el.value).trim() !== "";
-      if (el.type === "email" && valid) {
-        valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+      var valid;
+      if (el.type === "radio") {
+        valid = !!form.querySelector('input[name="' + el.name + '"]:checked');
+      } else if (el.type === "checkbox") {
+        valid = el.checked;
+      } else {
+        valid = String(el.value).trim() !== "";
+        if (el.type === "email" && valid) {
+          valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+        }
       }
       el.classList.toggle("invalid", !valid);
       if (!valid) ok = false;
@@ -86,7 +94,9 @@
     }
 
     var lodging = form.querySelector('input[name="lodging"]:checked');
+    var category = form.querySelector('input[name="category"]:checked');
     var entry = {
+      category: category ? category.value : "",
       firstName: form.firstName.value.trim(),
       lastName: form.lastName.value.trim(),
       birthDate: form.birthDate.value,
@@ -125,10 +135,10 @@
       alert("Nessuna adesione da esportare.");
       return;
     }
-    var headers = ["Nome", "Cognome", "Data di nascita", "Ruolo", "Societa",
+    var headers = ["Categoria", "Nome", "Cognome", "Data di nascita", "Ruolo", "Societa",
       "Genitore/tutore", "Email", "Telefono", "Paese/Citta", "Alloggio", "Note", "Data iscrizione"];
     var rows = entries.map(function (e) {
-      return [e.firstName, e.lastName, formatBirth(e.birthDate), e.role, e.club,
+      return [e.category, e.firstName, e.lastName, formatBirth(e.birthDate), e.role, e.club,
         e.parent, e.email, e.phone, e.country, e.lodging, e.notes, formatDate(e.createdAt)];
     });
 
